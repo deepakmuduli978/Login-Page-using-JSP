@@ -9,7 +9,7 @@
 <body>
     <div class="header">
          <h1>WELOCOME TO DEEP LEARNING PLATFORM</h1>
-   
+    </div>
             <div class="content">
                 <h2>SIGN IN</h2>
                 <form action="SignIn.jsp" method="post">
@@ -20,19 +20,22 @@
             <p>Don't have any account</p>
             <a href="SignUp.jsp">SignUp</a>
         </div>  
-        </div>
-    <%
-    String email=request.getParameter("Email");
-    String pass=request.getParameter("pass");
-    if(email!=null&&pass!=null){
-    if(email.equals("deepakmuduli978@gmail.com")&&pass.equals("1234")){
-        out.println("<h4>Login successfully");
+       <%
+    String email = request.getParameter("Email");
+    String pass = request.getParameter("pass");
+
+    if(email != null && pass != null){
+
+    if(email.equals("deepakmuduli978@gmail.com") && pass.equals("1234")){
         response.sendRedirect("Welcome.jsp");
-    }
-    else{
-        out.println("<h4>Invalid email id or password</h4>");
-    }
-}
+     } 
+    else {
     %>
+        <p style="color:red;">Invalid Email or Password</p>
+    <%
+     }
+    }
+%>
+ 
 </body>
 </html>
