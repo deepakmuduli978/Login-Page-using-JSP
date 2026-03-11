@@ -1,3 +1,4 @@
+ <%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,23 +26,5 @@
         <button type="submit">Resister</button>
     </form>
     
-    <%
-    String name=request.getParameter("username");
-    String Dob=request.getParameter("dob");
-    String gender=request.getParameter("gender");
-    String email=request.getParameter("Email");
-    String Password=request.getParameter("pass");
-    String cPassword=request.getParameter("cpass");
-    if(name!=null&&Dob!=null&&gender!=null&&email!=null&&Password!=null&&cPassword!=null){
-
-        if(Password.equals(cPassword)){
-            out.println("<h3>Registration successfully!</h3>");
-            out.println("<a href=\"SignIn.jsp\">Goto SignIN page!</a>");
-        }
-        else{
-            out.println("<h3>Password mismatch with Confirm Password</h3>");
-        }
-    }
-    %>
 </body>
 </html>
