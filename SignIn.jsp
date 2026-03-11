@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,22 +21,17 @@
             <p>Don't have any account</p>
             <a href="SignUp.jsp">SignUp</a>
         </div>  
-       <%
-    String email = request.getParameter("Email");
-    String pass = request.getParameter("pass");
-
-    if(email != null && pass != null){
-
-    if(email.equals("deepakmuduli978@gmail.com") && pass.equals("1234")){
+<%
+ String mail=request.getParameter("Email");
+ String password=request.getParameter("pass");
+ if(mail!=null&&password!=null){
+    if(mail.equals("user@gmail.com")&&password.equals("User@123")){
         response.sendRedirect("Welcome.jsp");
-     } 
-    else {
-    %>
-        <p style="color:red;">Invalid Email or Password</p>
-    <%
-     }
     }
-%>
- 
+    else{
+        out.println("<h4>Invalid email and password<h4>");
+    }
+ }
+ %>
 </body>
 </html>
